@@ -45,3 +45,34 @@ git status
 git branch
 
 git add .
+git commit -m "feature: react initial setup"
+
+git push
+
+//then copy below cmd and paste in terminal for first time
+git push --set-upstream origin feature/react-setup
+
+//For second time simply
+git push
+
+//Steps
+git checkout
+git pull origin main
+git checkout -b <feature-branch>
+git add .
+git status
+git commit -m "commit message"
+git push
+
+
+//Scenario
+//deleted branch
+git stash
+git checkout main
+git pull origin main
+git stash apply //merge conflicts
+git checkout -b <feature-branch>
+git add .
+git status
+git commit -m "commit message"
+git push
