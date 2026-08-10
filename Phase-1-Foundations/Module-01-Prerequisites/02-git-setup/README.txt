@@ -56,7 +56,7 @@ git push --set-upstream origin feature/react-setup
 git push
 
 //Steps
-git checkout
+git checkout main
 git pull origin main
 git checkout -b <feature-branch>
 git add .
