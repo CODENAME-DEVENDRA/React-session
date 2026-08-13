@@ -4,7 +4,11 @@ import * as Jsx from "./Phase-1-Foundations/Module-03-Fundamentals/02-jsx-and-el
 import * as Props from "./Phase-1-Foundations/Module-03-Fundamentals/03-props";
 import * as Events from "./Phase-1-Foundations/Module-03-Fundamentals/04-events";
 import * as States from "./Phase-1-Foundations/Module-03-Fundamentals/05-state";
-import * as Hooks from "./hooks/01-useState";
+import * as StateHooks from "./hooks/01-useState";
+import * as Conditional from "./Phase-1-Foundations/Module-03-Fundamentals/06-conditional-rendering";
+import * as Lists from "./Phase-1-Foundations/Module-03-Fundamentals/07-rendering-lists";
+import * as UseEffect from "./Phase-1-Foundations/Module-04-Intermediate/01-use-effect";
+import * as UseEffectHooks from "./hooks/02-useEffect";
 
 const App = () => {
   return (
@@ -28,11 +32,21 @@ const App = () => {
 
       {/* <States.StateBasics /> */}
 
-      {/* <Hooks.StateString /> */}
-      {/* <Hooks.StateNumber /> */}
-      {/* <Hooks.StateBoolean /> */}
-      {/* <Hooks.StateArray /> */}
-      <Hooks.StateObject />
+      {/* <StateHooks.StateString /> */}
+      {/* <StateHooks.StateNumber /> */}
+      {/* <StateHooks.StateBoolean /> */}
+      {/* <StateHooks.StateArray /> */}
+      {/* <StateHooks.StateObject /> */}
+
+      {/* <Conditional.Ternary /> */}
+      {/* <Conditional.LogicalAnd /> */}
+      {/* <Conditional.EarlyReturn /> */}
+      {/* <Conditional.MultipleConditions /> */}
+
+      {/* <Lists.Keys /> */}
+
+      {/* <UseEffect.UseEffectBasics /> */}
+      <UseEffectHooks.DataFetch />
     </>
   );
 };
