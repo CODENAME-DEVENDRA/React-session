@@ -9,6 +9,7 @@ import * as Conditional from "./Phase-1-Foundations/Module-03-Fundamentals/06-co
 import * as Lists from "./Phase-1-Foundations/Module-03-Fundamentals/07-rendering-lists";
 import * as UseEffect from "./Phase-1-Foundations/Module-04-Intermediate/01-use-effect";
 import * as UseEffectHooks from "./hooks/02-useEffect";
+import * as Forms from "./Phase-1-Foundations/Module-04-Intermediate/02-forms";
 
 const App = () => {
   return (
@@ -46,7 +47,11 @@ const App = () => {
       {/* <Lists.Keys /> */}
 
       {/* <UseEffect.UseEffectBasics /> */}
-      <UseEffectHooks.DataFetch />
+      {/* <UseEffectHooks.DataFetch /> */}
+
+      {/* <Forms.UncontrolledVsControlled /> */}
+      {/* <Forms.FormHandling /> */}
+      <Forms.FormValidation />
     </>
   );
 };
