@@ -10,6 +10,8 @@ import * as Lists from "./Phase-1-Foundations/Module-03-Fundamentals/07-renderin
 import * as UseEffect from "./Phase-1-Foundations/Module-04-Intermediate/01-use-effect";
 import * as UseEffectHooks from "./hooks/02-useEffect";
 import * as Forms from "./Phase-1-Foundations/Module-04-Intermediate/02-forms";
+import * as Lifting from "./Phase-1-Foundations/Module-04-Intermediate/03-lifting-state-up";
+import * as Context from "./Phase-1-Foundations/Module-04-Intermediate/04-context-api";
 
 const App = () => {
   return (
@@ -51,7 +53,11 @@ const App = () => {
 
       {/* <Forms.UncontrolledVsControlled /> */}
       {/* <Forms.FormHandling /> */}
-      <Forms.FormValidation />
+      {/* <Forms.FormValidation /> */}
+      {/* <Forms.HookFormZod /> */}
+
+      <Lifting.LiftingStateUp />
+      {/* <Context.UnderStandingContext /> */}
     </>
   );
 };
