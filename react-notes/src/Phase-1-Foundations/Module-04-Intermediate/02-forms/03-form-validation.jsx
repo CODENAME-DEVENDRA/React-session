@@ -43,7 +43,7 @@ const FormValidation = () => {
       setForm({ email: "", password: "" });
     }
 
-    setSubmitted && console.log("form", form); //why this is happening //because we used here setter function not submitted
+    submitted && console.log("form", form); //why this is happening //because we used here setter function not submitted
   };
 
   const handleChange = (e) => {
