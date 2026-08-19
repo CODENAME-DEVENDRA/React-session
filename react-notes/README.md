@@ -1,16 +1,63 @@
-# React + Vite
+# react-notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The application for the [React Session](../README.md) learning repository — a collection of small, focused examples covering React from fundamentals to advanced hooks.
 
-Currently, two official plugins are available:
+Built with **React 19** + **Vite**, plus **react-hook-form** and **Zod** for the form examples.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Then open the local URL printed by Vite (usually http://localhost:5173).
 
-## Expanding the ESLint configuration
+### Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the Vite dev server with HMR   |
+| `npm run build`   | Build for production                 |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint`    | Run ESLint                           |
+
+## How to Use
+
+Every topic is a standalone component, all wired up in [`src/App.jsx`](./src/App.jsx)
+and commented out by default. To view an example, uncomment the one you want to render:
+
+```jsx
+{/* <StateHooks.StateArray /> */}   // commented out
+<Ref.DomRef />                       // active
+```
+
+## Project Structure
+
+```
+src/
+├── Phase-1-Foundations/
+│   ├── Module-03-Fundamentals/      # components, JSX, props, events, state,
+│   │                                #   conditional rendering, lists
+│   └── Module-04-Intermediate/      # useEffect, forms, lifting state, context
+├── Phase-2-Advance-concepts/
+│   └── Module-01-Advance-concepts/  # useReducer, useRef
+├── hooks/                           # per-hook deep dives
+│   ├── 01-useState/                 #   string, number, boolean, array, object
+│   ├── 02-useEffect/                #   data fetching
+│   ├── 03-useContext/               #   advanced context
+│   └── 04-useReducer/               #   reducer todo, context + reducer
+├── App.jsx                          # toggle examples here
+└── main.jsx                         # app entry point
+```
+
+## Tech Stack
+
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/) (via [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react), using [Oxc](https://oxc.rs))
+- [react-hook-form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- [ESLint](https://eslint.org/)
+
+---
+
+> For the full curriculum breakdown, see the [root README](../README.md).
