@@ -14,6 +14,8 @@ import * as Lifting from "./Phase-1-Foundations/Module-04-Intermediate/03-liftin
 import * as Context from "./Phase-1-Foundations/Module-04-Intermediate/04-context-api";
 import * as ContextHook from "./hooks/03-useContext";
 import * as Reducer from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/01-useReducer";
+import * as ReducerHook from "./hooks/04-useReducer";
+import * as Ref from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/02-useRef";
 
 const App = () => {
   return (
@@ -63,7 +65,10 @@ const App = () => {
       {/* <Context.UnderStandingContext /> */}
       {/* <ContextHook.AdvanceContext /> */}
 
-      <Reducer.CountReducer />
+      {/* <Reducer.CountReducer /> */}
+      {/* <ReducerHook.ReducerTodo /> */}
+
+      <Ref.DomRef />
     </>
   );
 };
