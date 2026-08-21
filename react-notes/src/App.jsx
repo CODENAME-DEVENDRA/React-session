@@ -16,6 +16,8 @@ import * as ContextHook from "./hooks/03-useContext";
 import * as Reducer from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/01-useReducer";
 import * as ReducerHook from "./hooks/04-useReducer";
 import * as Ref from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/02-useRef";
+import * as MemoCallback from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/03-useMemo-useCallback-memo";
+import * as CustomHook from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/04-custom-hooks";
 
 const App = () => {
   return (
@@ -68,7 +70,13 @@ const App = () => {
       {/* <Reducer.CountReducer /> */}
       {/* <ReducerHook.ReducerTodo /> */}
 
-      <Ref.DomRef />
+      {/* <Ref.DomRef /> */}
+      {/* <Ref.PersistValue /> */}
+
+      {/* <MemoCallback.UseMemoExample /> */}
+      {/* <MemoCallback.UseCallbackExample /> */}
+
+      <CustomHook.UseFetchComp />
     </>
   );
 };
