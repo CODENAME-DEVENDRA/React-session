@@ -1,0 +1,31 @@
+import React, { useEffect, useState } from "react";
+
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    const storedValue = localStorage.getItem(key);
+    return storedValue !== null ? JSON.parse(storedValue) : initialValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+}
+
+const UseLocalStorageComp = () => {
+  const [name, setName] = useLocalStorage("name", "");
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <p>Stored value : {name}</p>
+    </div>
+  );
+};
+
+export default UseLocalStorageComp;
