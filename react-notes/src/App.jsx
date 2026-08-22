@@ -65,7 +65,8 @@ const App = () => {
       {/* <Lifting.LiftingStateUp /> */}
 
       {/* <Context.UnderStandingContext /> */}
-      {/* <ContextHook.AdvanceContext /> */}
+      {/* <ContextHook.ThemeContextComp /> */}
+      <ContextHook.UserContextComp />
 
       {/* <Reducer.CountReducer /> */}
       {/* <ReducerHook.ReducerTodo /> */}
@@ -76,7 +77,9 @@ const App = () => {
       {/* <MemoCallback.UseMemoExample /> */}
       {/* <MemoCallback.UseCallbackExample /> */}
 
-      <CustomHook.UseFetchComp />
+      {/* <CustomHook.UseFetchComp /> */}
+      {/* <CustomHook.UseLocalStorageComp /> */}
+      {/* <CustomHook.UseDebounceComp /> */}
     </>
   );
 };
