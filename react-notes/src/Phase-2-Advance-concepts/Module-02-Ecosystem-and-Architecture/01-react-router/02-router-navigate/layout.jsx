@@ -18,7 +18,11 @@ const Layout = () => {
         <NavLink to="/login" style={linkStyle}>
           Login
         </NavLink>
+        <NavLink to="/search" style={linkStyle}>
+          Search
+        </NavLink>
       </nav>
+      <hr />
       <Outlet />
     </div>
   );
