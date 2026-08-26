@@ -8,15 +8,15 @@ import {
 } from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/01-react-router";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  //   <App />
-  // </StrictMode>,
+  <StrictMode>
+    <App />
+  </StrictMode>,
 
   // <StrictMode>
   //   <RouterBasics />
   // </StrictMode>,
 
-  <StrictMode>
-    <RouterNavigate />
-  </StrictMode>,
+  // <StrictMode>
+  //   <RouterNavigate />
+  // </StrictMode>,
 );

@@ -4,6 +4,8 @@ import Layout from "./layout";
 import Home from "./home";
 import Login from "./login";
 import Dashboard from "./dashboard";
+import NotFound from "./not-found";
+import Search from "./search";
 
 const RouterNavigate = () => {
   return (
@@ -16,6 +18,8 @@ const RouterNavigate = () => {
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

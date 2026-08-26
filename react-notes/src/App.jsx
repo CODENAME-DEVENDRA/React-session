@@ -18,6 +18,7 @@ import * as ReducerHook from "./hooks/04-useReducer";
 import * as Ref from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/02-useRef";
 import * as MemoCallback from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/03-useMemo-useCallback-memo";
 import * as CustomHook from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/04-custom-hooks";
+import * as StateManagement from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/02-state-management";
 
 const App = () => {
   return (
@@ -65,6 +66,7 @@ const App = () => {
       {/* <CustomHook.UseFetchComp /> */}
       {/* <CustomHook.UseLocalStorageComp /> */}
       {/* <CustomHook.UseDebounceComp /> */}
+      <StateManagement.ZustandComp />
     </>
   );
 };
