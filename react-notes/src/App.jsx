@@ -66,7 +66,8 @@ const App = () => {
       {/* <CustomHook.UseFetchComp /> */}
       {/* <CustomHook.UseLocalStorageComp /> */}
       {/* <CustomHook.UseDebounceComp /> */}
-      <StateManagement.ZustandComp />
+      {/* <StateManagement.ZustandComp /> */}
+      <StateManagement.ReduxToolkitComp />
     </>
   );
 };
