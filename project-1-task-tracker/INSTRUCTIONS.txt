@@ -1,0 +1,64 @@
+//Step 1
+npm create vite@latest project-1-task-tracker -- --template react-ts
+
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  TypeScript
+│
+◇  Which linter to use?
+│  ESLint
+
+//Step 2 (packages install)
+npm i zustand
+npm i @tanstack/react-query
+npm i lucide-react
+npm i class-variance-authority
+npm i tailwind-merge
+npm i clsx
+
+//Step 3 (Tailwind setup)
+npm install tailwindcss @tailwindcss/vite
+
+//src/index.css
+@import "tailwindcss";
+
+//project-1-task-tracker\tsconfig.json
+ "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+
+//project-1-task-tracker\tsconfig.app.json
+/* tailwind setup */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+}
+
+npm install -D @types/node
+
+//project-1-task-tracker\vite.config.ts
+import path from "path"
+import tailwindcss from "@tailwindcss/vite"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
+ 
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+})
+
+//explore https://tailwindcss.com/ for styles
+
+
+//Step 4
+npx shadcn@latest init

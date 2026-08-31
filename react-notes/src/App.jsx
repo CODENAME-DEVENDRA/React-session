@@ -19,7 +19,7 @@ import * as Ref from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/02-u
 import * as MemoCallback from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/03-useMemo-useCallback-memo";
 import * as CustomHook from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/04-custom-hooks";
 import * as StateManagement from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/02-state-management";
-
+import * as ReactQuery from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/03-react-query";
 const App = () => {
   return (
     <>
@@ -67,7 +67,8 @@ const App = () => {
       {/* <CustomHook.UseLocalStorageComp /> */}
       {/* <CustomHook.UseDebounceComp /> */}
       {/* <StateManagement.ZustandComp /> */}
-      <StateManagement.ReduxToolkitComp />
+      {/* <StateManagement.ReduxToolkitComp /> */}
+      <ReactQuery.ReactQueryBasics />
     </>
   );
 };
