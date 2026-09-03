@@ -1,75 +1,96 @@
-# React + TypeScript + Vite
+# Task Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small CRUD task tracker built with React + TypeScript + Vite. Tasks are served by a mock REST API (json-server) and fetched/mutated with TanStack Query.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **TypeScript** + **Vite**
+- **TanStack Query** (`@tanstack/react-query`) — server state, caching, and refetching
+- **json-server** — mock REST API backed by `db.json`
+- **Tailwind CSS v4** (via `@tailwindcss/vite`)
+- **shadcn/ui** (Radix primitives) — `card`, `input`, `button`, `checkbox`
+- **zustand** — client state (available for future use)
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+ and npm
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+This project needs **two processes running at the same time** — the mock API and the Vite dev server. Use two terminals:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Terminal 1 — mock API on http://localhost:4000
+npm run server
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Terminal 2 — app on http://localhost:5173
+npm run dev
+```
+
+Then open http://localhost:5173.
+
+## Environment variables
+
+The API base URL is read from a Vite env var. Copy the example file and adjust if needed:
+
+```bash
+cp .env.example .env
+```
 
 ```
+VITE_BASE_API_URL=http://localhost:4000
+```
+
+> Only variables prefixed with `VITE_` are exposed to the client. If unset, the app falls back to `http://localhost:4000`.
+
+## Available scripts
+
+| Script            | Description                                          |
+| ----------------- | ---------------------------------------------------- |
+| `npm run dev`     | Start the Vite dev server                            |
+| `npm run server`  | Start json-server (mock API) on port 4000            |
+| `npm run build`   | Type-check and build for production                  |
+| `npm run preview` | Preview the production build                         |
+| `npm run lint`    | Run ESLint                                           |
+
+## Mock API
+
+`db.json` holds the data. json-server exposes a REST endpoint for each top-level key:
+
+- `GET    /tasks` — list tasks
+- `POST   /tasks` — create a task (`{ text, completed }`)
+
+A task has the shape:
+
+```ts
+type Task = {
+  id: string;
+  text: string;
+  completed: boolean;
+};
+```
+
+## Project structure
+
+```
+src/
+  api/taskApi.ts            # fetch wrapper + fetchTasks / createTask
+  hooks/useTasks.ts         # useTasks (query) + useCreateTask (mutation)
+  features/tasks/
+    AddTaskForm.tsx         # form to add a task
+  components/ui/            # shadcn/ui components (button, card, input, checkbox)
+  lib/utils.ts             # cn() class-name helper
+  types.ts                  # Task type
+  App.tsx                   # page layout
+  main.tsx                  # QueryClientProvider + app root
+```
+
+## Notes
+
+- Vite is configured to **ignore `db.json`** in its file watcher (`server.watch.ignored` in `vite.config.ts`). Without this, every write by json-server on create/update/delete would trigger a full page reload in dev.
