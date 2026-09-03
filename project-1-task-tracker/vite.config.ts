@@ -11,4 +11,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    watch: {
+      // Don't reload the page when json-server rewrites db.json on each POST/PUT/DELETE
+      ignored: ["**/db.json"],
+    },
+  },
 });
