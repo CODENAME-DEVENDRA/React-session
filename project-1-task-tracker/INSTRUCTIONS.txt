@@ -59,6 +59,13 @@ export default defineConfig({
 
 //explore https://tailwindcss.com/ for styles
 
-
 //Step 4
 npx shadcn@latest init
+//Radix ui
+//Nova
+
+//Step 5
+npx shadcn@latest add card input button checkbox
+
+
+//npm i -D json-server
