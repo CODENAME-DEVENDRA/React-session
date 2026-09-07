@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "./components/ui/card";
 import AddTaskForm from "./features/tasks/AddTaskForm";
+import TaskList from "./features/tasks/TaskList";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <CardDescription>CRUD operations</CardDescription>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="flex flex-col gap-4">
           <AddTaskForm />
+          <TaskList />
         </CardContent>
       </Card>
     </div>

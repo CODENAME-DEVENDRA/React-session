@@ -16,13 +16,33 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   return response.json() as Promise<T>;
 }
 
+//READ
 export async function fetchTasks(): Promise<Task[]> {
   return request<Task[]>("/tasks");
 }
 
+//CREATE
 export async function createTask(text: string): Promise<Task> {
   return request<Task>("/tasks", {
     method: "POST",
     body: JSON.stringify({ text, completed: false }),
+  });
+}
+
+//UPDATE
+export async function updateTask(
+  id: string,
+  updates: Partial<Task>,
+): Promise<Task> {
+  return request<Task>(`/tasks/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(updates),
+  });
+}
+
+//DELETE
+export async function deleteTask(id: string): Promise<void> {
+  await request<unknown>(`/tasks/${id}`, {
+    method: "DELETE",
   });
 }

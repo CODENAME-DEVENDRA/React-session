@@ -1,9 +1,19 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "text": "Sample task",
-      "completed": false
+      "text": "qwert",
+      "completed": true,
+      "id": "xJvnefbnn9I"
+    },
+    {
+      "text": "asfd",
+      "completed": true,
+      "id": "9u8wSefgwXo"
+    },
+    {
+      "text": "zxcv",
+      "completed": false,
+      "id": "RQZ8UJJBLkk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
