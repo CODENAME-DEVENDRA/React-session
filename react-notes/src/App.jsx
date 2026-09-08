@@ -59,6 +59,7 @@ const App = () => {
       {/* <ContextHook.UserContextComp /> */}
       {/* <Reducer.CountReducer /> */}
       {/* <ReducerHook.ReducerTodo /> */}
+      <ReducerHook.ContextReducer />
       {/* <Ref.DomRef /> */}
       {/* <Ref.PersistValue /> */}
       {/* <MemoCallback.UseMemoExample /> */}
@@ -68,7 +69,7 @@ const App = () => {
       {/* <CustomHook.UseDebounceComp /> */}
       {/* <StateManagement.ZustandComp /> */}
       {/* <StateManagement.ReduxToolkitComp /> */}
-      <ReactQuery.ReactQueryBasics />
+      {/* <ReactQuery.ReactQueryBasics /> */}
     </>
   );
 };
