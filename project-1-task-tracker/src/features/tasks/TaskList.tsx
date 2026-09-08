@@ -1,9 +1,24 @@
 import { useTasks } from "@/hooks/useTasks";
 import { Loader2 } from "lucide-react";
 import TaskItem from "./TaskItem";
+import { useMemo } from "react";
+import { useFilterStore } from "@/store/useFilterStore";
 
 const TaskList = () => {
   const { data: tasks, isLoading, isError, error } = useTasks();
+  const filter = useFilterStore((state) => state.filter);
+  const search = useFilterStore((state) => state.search);
+
+  const filteredTasks = useMemo(() => {
+    if (!tasks) return [];
+    return tasks
+      .filter((task) => {
+        if (filter === "active") return !task.completed;
+        if (filter === "completed") return task.completed;
+        return true; //all tasks
+      })
+      .filter((task) => task.text.toLowerCase().includes(search.toLowerCase()));
+  }, [tasks, filter, search]);
 
   if (isLoading)
     return (
@@ -29,7 +44,7 @@ const TaskList = () => {
 
   return (
     <ul className="flex flex-col gap-2">
-      {tasks?.map((task) => (
+      {filteredTasks?.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
     </ul>

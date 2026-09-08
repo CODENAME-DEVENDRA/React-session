@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "./components/ui/card";
 import AddTaskForm from "./features/tasks/AddTaskForm";
+import TaskFilters from "./features/tasks/TaskFilters";
 import TaskList from "./features/tasks/TaskList";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
         <CardContent className="flex flex-col gap-4">
           <AddTaskForm />
+          <TaskFilters />
           <TaskList />
         </CardContent>
       </Card>

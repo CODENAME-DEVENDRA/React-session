@@ -10,7 +10,11 @@ const AddTaskForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addTask.mutate(text);
+
+    const trimmedText = text.trim();
+    if (!trimmedText) return;
+
+    addTask.mutate(trimmedText);
     setText("");
   };
 
