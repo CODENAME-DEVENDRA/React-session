@@ -1,0 +1,24 @@
+npm create vite@latest my-app -- --template react-ts
+
+
+npm i react-router-dom
+npm i @reduxjs/toolkit
+npm i react-redux
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+npm i axios
+
+
+//In vite.config.ts
+ resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+
+//tsconfig.app.json
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
