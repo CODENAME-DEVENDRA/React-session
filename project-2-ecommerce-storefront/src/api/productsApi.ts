@@ -1,3 +1,4 @@
+import type { Product } from "@/types";
 import axios from "axios";
 
 const api = axios.create({
@@ -7,7 +8,8 @@ const api = axios.create({
   },
 });
 
-export async function fetchProducts() {
+//GET /products
+export async function fetchProducts(): Promise<Product[]> {
   const { data } = await api.get("/products");
   return data;
 }
