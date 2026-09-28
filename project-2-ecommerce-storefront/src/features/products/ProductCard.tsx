@@ -1,5 +1,13 @@
 import type { Product } from "@/types";
-import { Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Chip,
+  Typography,
+} from "@mui/material";
 
 interface ProductCardProps {
   product: Product;
@@ -8,23 +16,25 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <CardMedia
-        component="img"
-        image={product.image}
-        alt={product.title}
-        sx={{ height: 150, objectFit: "contain", p: 2 }}
-      />
-      <CardContent>
-        <Chip
-          label={product.category}
-          size="small"
-          sx={{ textTransform: "capitalize" }}
+      <CardActionArea component={Link} to={`/products/${product.id}`}>
+        <CardMedia
+          component="img"
+          image={product.image}
+          alt={product.title}
+          sx={{ height: 150, objectFit: "contain", p: 2 }}
         />
-        <Typography variant="subtitle1">{product.title}</Typography>
-        <Typography variant="subtitle2" sx={{ fontWeight: "bold" }}>
-          ${product.price.toFixed(2)}
-        </Typography>
-      </CardContent>
+        <CardContent>
+          <Chip
+            label={product.category}
+            size="small"
+            sx={{ textTransform: "capitalize" }}
+          />
+          <Typography variant="subtitle1">{product.title}</Typography>
+          <Typography variant="subtitle2" sx={{ fontWeight: "bold" }}>
+            ${product.price.toFixed(2)}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 };
