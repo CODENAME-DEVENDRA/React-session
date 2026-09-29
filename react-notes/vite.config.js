@@ -10,4 +10,9 @@ export default defineConfig({
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
   },
+  test: {
+    // highlight-next-line
+    environment: "jsdom",
+    globals: true,
+  },
 });

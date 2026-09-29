@@ -20,6 +20,8 @@ import * as MemoCallback from "./Phase-2-Advance-concepts/Module-01-Advance-conc
 import * as CustomHook from "./Phase-2-Advance-concepts/Module-01-Advance-concepts/04-custom-hooks";
 import * as StateManagement from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/02-state-management";
 import * as ReactQuery from "./Phase-2-Advance-concepts/Module-02-Ecosystem-and-Architecture/03-react-query";
+// import * as Testing from "./Phase-3-Production-ready-react";
+import Counter from "./Phase-3-Production-ready-react/01-unit-testing-vitest/Counter";
 const App = () => {
   return (
     <>
@@ -59,7 +61,7 @@ const App = () => {
       {/* <ContextHook.UserContextComp /> */}
       {/* <Reducer.CountReducer /> */}
       {/* <ReducerHook.ReducerTodo /> */}
-      <ReducerHook.ContextReducer />
+      {/* <ReducerHook.ContextReducer /> */}
       {/* <Ref.DomRef /> */}
       {/* <Ref.PersistValue /> */}
       {/* <MemoCallback.UseMemoExample /> */}
@@ -70,6 +72,7 @@ const App = () => {
       {/* <StateManagement.ZustandComp /> */}
       {/* <StateManagement.ReduxToolkitComp /> */}
       {/* <ReactQuery.ReactQueryBasics /> */}
+      <Counter />
     </>
   );
 };
