@@ -19,3 +19,8 @@ export async function fetchProductById(id: string): Promise<Product> {
   const { data } = await api.get(`/products/${id}`);
   return data;
 }
+
+export async function fetchCategories(): Promise<string[]> {
+  const { data } = await api.get(`/products/categories`);
+  return data;
+}

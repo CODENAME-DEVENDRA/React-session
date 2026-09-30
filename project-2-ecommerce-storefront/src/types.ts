@@ -6,3 +6,11 @@ export interface Product {
   category: string;
   image: string;
 }
+
+export type SortOption = "featured" | "price-asc" | "price-desc";
+
+export interface Filters {
+  category: string;
+  search: string;
+  sort: SortOption;
+}
