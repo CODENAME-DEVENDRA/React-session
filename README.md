@@ -4,9 +4,9 @@ A hands-on learning repository documenting my journey through React — from cor
 
 Built with **React 19** and **Vite**, and covering the modern ecosystem: **react-hook-form** + **Zod** for forms, **React Router** for routing, **Zustand** and **Redux Toolkit** for state management, and **TanStack Query** for server state.
 
-The repository is organized into two parts: the [`react-notes/`](./react-notes)
-learning app (documented below) and hands-on [projects](#projects) that apply the
-concepts in a real build.
+The repository has three parts: JavaScript foundation exercises in
+[`Phase-1-Foundations/`](./Phase-1-Foundations), the [`react-notes/`](./react-notes)
+learning app, and hands-on [projects](#projects) that apply the concepts in real builds.
 
 ## Getting Started
 
@@ -28,21 +28,30 @@ Then open the local URL printed by Vite (usually http://localhost:5173).
 | `npm run build`   | Build for production                 |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint`    | Run ESLint                           |
+| `npm run test -- --run` | Run the Vitest suite once        |
 
 ## How to Use
 
-Each topic is a standalone component. To view an example, open
-[`src/App.jsx`](./react-notes/src/App.jsx) and uncomment the component you want
-to render — every example is wired up there and commented out by default.
+The active example is the Phase 3 Vitest lesson, exposed as
+`Testing.UnitTesting` through its module barrel. To view another React example,
+open [`src/App.jsx`](./react-notes/src/App.jsx), comment out
+`<Testing.UnitTesting />`, and uncomment the component you want to render.
 
 ```jsx
-{/* <StateHooks.StateArray /> */}   // commented out
-<Ref.DomRef />                       // active
+{/* <StateHooks.StateArray /> */}
+<Testing.UnitTesting />
 ```
 
-The React Router examples are the exception: they render the whole app, so they
-are wired up in [`src/main.jsx`](./react-notes/src/main.jsx) instead. Comment out
-`<App />` and uncomment the router example you want to view.
+The Vitest lesson tests use the same Phase 3 barrel export.
+
+To try the React Router lessons, open
+[`src/main.jsx`](./react-notes/src/main.jsx) and replace `<App />` inside
+`<StrictMode>` with `<RouterBasics />` or `<RouterNavigate />`.
+
+The JavaScript exercises are organized by topic under
+[`Phase-1-Foundations/`](./Phase-1-Foundations): ES6 syntax, destructuring and
+spread/rest, array methods, and promises/async-await. Each module includes
+examples and practice files where applicable.
 
 ## Curriculum
 
@@ -78,6 +87,10 @@ Examples are grouped by learning phase, with dedicated hook deep-dives under `sr
 - **State Management** — global state with [Zustand](https://zustand-demo.pmnd.rs/) and [Redux Toolkit](https://redux-toolkit.js.org/) (counter example built in both)
 - **React Query** — server-state fetching, caching, and loading/error states with [TanStack Query](https://tanstack.com/query)
 
+### Phase 3 — Production-Ready React
+
+- **Unit Testing with Vitest** — component tests for initial state, user interaction, and reset behavior
+
 ### Hooks (deep dives)
 
 Focused, incremental examples for each core hook:
@@ -93,10 +106,26 @@ concepts together in a real build.
 
 - **[`project-1-task-tracker/`](./project-1-task-tracker)** — a task tracker built
   with **React 19 + TypeScript**, **Vite**, **Tailwind CSS**, **Zustand** (client
-  state), and **TanStack Query** (server state). Run it the same way:
+  state), and **TanStack Query** (server state). Start its mock API and app in
+  separate terminals after installing dependencies:
 
   ```bash
   cd project-1-task-tracker
+  npm install
+  npm run server
+  ```
+
+  ```bash
+  cd project-1-task-tracker
+  npm run dev
+  ```
+
+- **[`project-2-ecommerce-storefront/`](./project-2-ecommerce-storefront)** — an
+  ecommerce storefront built with **React 19 + TypeScript**, **Vite**, **MUI**,
+  **Redux Toolkit**, and **React Router**. Start it with:
+
+  ```bash
+  cd project-2-ecommerce-storefront
   npm install
   npm run dev
   ```
@@ -104,22 +133,19 @@ concepts together in a real build.
 ## Project Structure
 
 ```
-react-notes/
-├── src/
-│   ├── Phase-1-Foundations/
-│   │   ├── Module-03-Fundamentals/      # components, JSX, props, events, state,
-│   │   │                                #   conditional rendering, lists
-│   │   └── Module-04-Intermediate/      # useEffect, forms, lifting state, context
-│   ├── Phase-2-Advance-concepts/
-│   │   ├── Module-01-Advance-concepts/  # useReducer, useRef, useMemo/useCallback/memo,
-│   │   │                                #   custom hooks
-│   │   └── Module-02-Ecosystem-and-Architecture/
-│   │                                    # react-router, state management
-│   │                                    #   (zustand + redux toolkit), react query
-│   ├── hooks/            # per-hook deep dives
-│   ├── App.jsx           # toggle most examples here
-│   └── main.jsx          # app entry (router examples wired up here)
-└── package.json
+.
+├── Phase-1-Foundations/               # JavaScript setup and language exercises
+├── react-notes/
+│   ├── src/
+│   │   ├── Phase-1-Foundations/       # React fundamentals and intermediate topics
+│   │   ├── Phase-2-Advance-concepts/  # advanced React and ecosystem topics
+│   │   ├── Phase-3-Production-ready-react/ # testing with Vitest
+│   │   ├── hooks/                    # per-hook deep dives
+│   │   ├── App.jsx                   # select the active example
+│   │   └── main.jsx                  # app entry; router examples can be mounted here
+│   └── package.json
+├── project-1-task-tracker/            # CRUD task tracker
+└── project-2-ecommerce-storefront/    # ecommerce storefront
 ```
 
 ## Tech Stack

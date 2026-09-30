@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Counter from "./Counter";
+import * as Testing from "..";
 
 //1.start from 0
 //2.increments when the button is clicked
@@ -9,13 +9,13 @@ import Counter from "./Counter";
 
 describe("<Counter/>", () => {
   it("start from 0", () => {
-    render(<Counter />);
+    render(<Testing.UnitTesting />);
     expect(screen.getByLabelText("count").textContent).toBe("Count: 0");
   });
 
   it("increments when the button is clicked", async () => {
     const user = userEvent.setup();
-    render(<Counter />);
+    render(<Testing.UnitTesting />);
 
     await user.click(screen.getByRole("button", { name: /increment/i }));
     await user.click(screen.getByRole("button", { name: /increment/i }));
@@ -25,7 +25,7 @@ describe("<Counter/>", () => {
 
   it("resets to 0", async () => {
     const user = userEvent.setup();
-    render(<Counter />);
+    render(<Testing.UnitTesting />);
 
     await user.click(screen.getByRole("button", { name: /increment/i }));
     await user.click(screen.getByRole("button", { name: /reset/i }));

@@ -21,20 +21,26 @@ Then open the local URL printed by Vite (usually http://localhost:5173).
 | `npm run build`   | Build for production                 |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint`    | Run ESLint                           |
+| `npm run test -- --run` | Run the Vitest suite once        |
 
 ## How to Use
 
-Every topic is a standalone component, all wired up in [`src/App.jsx`](./src/App.jsx)
-and commented out by default. To view an example, uncomment the one you want to render:
+Most lesson examples are exported components. [`src/App.jsx`](./src/App.jsx)
+imports them and selects which one to render. The current example is the Phase 3
+Vitest lesson, exposed through its `Testing.UnitTesting` barrel export. To view
+another example, comment out `<Testing.UnitTesting />` and uncomment the component
+you want, for example:
 
 ```jsx
-{/* <StateHooks.StateArray /> */}   // commented out
-<Ref.DomRef />                       // active
+{/* <StateHooks.StateArray /> */}
+<Testing.UnitTesting />
 ```
 
-The React Router examples render the whole app, so they live in
-[`src/main.jsx`](./src/main.jsx) instead. Comment out `<App />` and uncomment the
-router example you want to view.
+The Vitest lesson tests import `UnitTesting` through the same Phase 3 barrel.
+
+To try the React Router lessons, change the rendered component in
+[`src/main.jsx`](./src/main.jsx) from `<App />` to `<RouterBasics />` or
+`<RouterNavigate />`.
 
 ## Project Structure
 
@@ -51,13 +57,15 @@ src/
 │       ├── 01-react-router/         #   router basics + navigation
 │       ├── 02-state-management/     #   zustand + redux toolkit
 │       └── 03-react-query/          #   TanStack Query
+├── Phase-3-Production-ready-react/
+│   └── 01-unit-testing-vitest/      # Vitest component and test examples
 ├── hooks/                           # per-hook deep dives
 │   ├── 01-useState/                 #   string, number, boolean, array, object
 │   ├── 02-useEffect/                #   data fetching
 │   ├── 03-useContext/               #   advanced context
 │   └── 04-useReducer/               #   reducer todo, context + reducer
 ├── App.jsx                          # toggle most examples here
-└── main.jsx                         # app entry (router examples wired up here)
+└── main.jsx                         # app entry; router examples can be mounted here
 ```
 
 ## Tech Stack
