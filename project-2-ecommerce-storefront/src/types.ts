@@ -14,3 +14,7 @@ export interface Filters {
   search: string;
   sort: SortOption;
 }
+
+export interface CartItem extends Product {
+  quantity: number;
+}
