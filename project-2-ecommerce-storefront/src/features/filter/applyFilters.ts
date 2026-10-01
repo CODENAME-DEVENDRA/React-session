@@ -17,5 +17,20 @@ export function applyFilters(
     result = result.filter((p) => p.title.toLowerCase().includes(query));
   }
 
+  //3.sort
+  result = [...result];
+  switch (sort) {
+    case "price-asc":
+      result.sort((a, b) => a.price - b.price);
+      break;
+
+    case "price-desc":
+      result.sort((a, b) => b.price - a.price);
+      break;
+
+    default:
+      break;
+  }
+
   return result;
 }
