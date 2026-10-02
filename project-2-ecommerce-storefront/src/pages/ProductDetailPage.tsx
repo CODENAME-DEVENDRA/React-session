@@ -1,3 +1,5 @@
+import { useAppDispatch } from "@/app/hooks";
+import { addToCart } from "@/features/cart/cartSlice";
 import { useProductById } from "@/features/products/useProducts";
 import {
   Alert,
@@ -14,6 +16,7 @@ import { useParams } from "react-router-dom";
 const ProductDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const { data: product, loading, error } = useProductById(id);
+  const dispatch = useAppDispatch();
 
   if (loading) {
     return (
@@ -69,7 +72,11 @@ const ProductDetailPage = () => {
             Price: ${product?.price.toFixed(2)}
           </Typography>
           <Typography variant="body2">{product?.description}</Typography>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => dispatch(addToCart(product))}
+          >
             Add to cart
           </Button>
         </Stack>

@@ -9,9 +9,12 @@ import {
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CartDrawer from "@/features/cart/CartDrawer";
 import { useState } from "react";
+import { useAppSelector } from "@/app/hooks";
+import { selectCartCount } from "@/features/cart/cartSlice";
 
 function Navbar() {
   const [cartOpen, setCartOpen] = useState<boolean>(false);
+  const count = useAppSelector(selectCartCount);
   return (
     <>
       <AppBar position="static" elevation={1}>
@@ -40,7 +43,7 @@ function Navbar() {
 
           <Box>
             <IconButton onClick={() => setCartOpen(true)}>
-              <Badge>
+              <Badge badgeContent={count} color="secondary">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
