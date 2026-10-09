@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-editorial: Georgia, "Times New Roman", serif;
+  --font-interface: Arial, Helvetica, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --text-tiny: 8px;
+  --text-kicker: 9px;
+  --text-meta: 10px;
+  --text-small: 11px;
+  --text-body: 15px;
+  --text-lead: 22px;
+  --text-brand: 23px;
+  --text-brand-large: 28px;
+  --text-loading: 42px;
+  --text-display: clamp(48px, 7vw, 78px);
+  --text-display--line-height: 0.99;
+  --text-page-display: clamp(44px, 6vw, 68px);
+  --text-page-display--line-height: 1.04;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --tracking-kicker: 1.65px;
+  --tracking-date: 1.25px;
+  --tracking-label: 1.2px;
+  --tracking-live: 1.6px;
+  --tracking-brand: -1.5px;
+  --tracking-display: -3.7px;
+  --tracking-page-display: -2.4px;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  --color-paper: #f7f6f1;
+  --color-ink: #21251f;
+  --color-line: #deded4;
+  --color-accent: #52634c;
+  --color-accent-hover: #394939;
+  --color-live: #d97957;
+  --color-muted: #70766b;
+  --color-subtle: #85897f;
+  --color-secondary: #555d52;
+  --color-date: #7a7d73;
+  --color-copy: #62675d;
+  --color-link: #74796f;
+  --color-callout: #eeeee6;
+}

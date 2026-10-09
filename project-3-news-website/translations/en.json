@@ -1,0 +1,96 @@
+{
+  "brand": {
+    "name": "The Current",
+    "edition": "The daily edition",
+    "tagline": "Independent, in context.",
+    "footerNote": "Made for curious people · 2026"
+  },
+  "metadata": {
+    "title": "The Current — Independent, in context",
+    "description": "Live technology headlines with infinite scrolling, fast cached pages, and room for context."
+  },
+  "navigation": {
+    "home": "The Current home",
+    "about": "About",
+    "mainLabel": "Main navigation"
+  },
+  "home": {
+    "title": "Today’s briefing",
+    "mastheadDate": "Monday, October 5, 2026",
+    "issue": "Vol. 01 / No. 001",
+    "eyebrow": "A clearer view of what matters",
+    "headlineFirst": "Good stories.",
+    "headlineSecond": "Better context.",
+    "summary": "A considered daily briefing on the ideas, people, and shifts shaping our world."
+  },
+  "footer": {
+    "siteName": "The Current",
+    "tagline": "Independent, in context.",
+    "note": "Made for curious people · 2026"
+  },
+  "liveHeadline": {
+    "sectionLabel": "Live top story",
+    "status": "Live",
+    "loading": "Checking the latest headline…",
+    "unavailable": "Live headlines are temporarily unavailable.",
+    "storyLabel": "Top story"
+  },
+  "feed": {
+    "sectionLabel": "Live top stories",
+    "loading": "Loading live stories…",
+    "retry": "Try again",
+    "eyebrow": "The live wire",
+    "title": "Top stories, right now",
+    "source": "Hacker News",
+    "loaded": "loaded",
+    "refreshesAsYouRead": "refreshes as you read",
+    "storyLink": "Open story",
+    "score": "Score",
+    "by": "by",
+    "minuteSuffix": "m ago",
+    "hourSuffix": "h ago",
+    "daySuffix": "d ago",
+    "loadingNextPage": "Loading another page…",
+    "moreStories": "More stories",
+    "nextPageError": "Couldn’t load the next page.",
+    "description": "Stories and scores come from Hacker News. Scroll inside the feed to load more."
+  },
+  "about": {
+    "title": "About us",
+    "backHome": "← Today’s briefing",
+    "eyebrow": "Why we’re here",
+    "headlineFirst": "The news moves fast.",
+    "headlineSecond": "Understanding takes time.",
+    "introduction": "The Current is a small editorial desk built around a simple idea: useful journalism helps you see not only what happened, but why it matters.",
+    "principles": [
+      {
+        "title": "Curiosity first",
+        "description": "We follow the questions behind the headlines, across technology, climate, culture, and the ways we live together."
+      },
+      {
+        "title": "Room for context",
+        "description": "We believe a little background can turn a passing update into something worth remembering."
+      }
+    ],
+    "learnerNoteTitle": "For the learners:",
+    "learnerNote": "this page is a simple Server Component. Try adding a page at",
+    "learnerNoteEnd": "and linking it from the header."
+  },
+  "loading": {
+    "eyebrow": "Setting the page",
+    "title": "One moment…"
+  },
+  "notFound": {
+    "eyebrow": "404 · Lost in the margins",
+    "headlineFirst": "This story isn’t",
+    "headlineSecond": "on this page.",
+    "description": "It may have moved, or it may never have been filed.",
+    "backHome": "Back to today’s briefing"
+  },
+  "errors": {
+    "request": "The news feed could not be reached. Please try again.",
+    "server": "Could not load stories from Hacker News. Please try again.",
+    "emptyHeadline": "Hacker News has no top story right now.",
+    "missingHeadline": "The latest Hacker News story is unavailable."
+  }
+}
